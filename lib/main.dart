@@ -9,15 +9,14 @@ class MyApp extends StatefulWidget {
 }
 class _MyAppState extends State<MyApp>{
   int counter = 0;
+  int f = 0;
+  Color iconColorM = Colors.blue;
+  Color iconColorLl = Colors.blue;
+  Color iconColorR = Colors.blue;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('App ITESO'),
-        ),
-        */ 
         appBar: AppBar(
           title: Text('App ITESO'),
         ),
@@ -43,6 +42,7 @@ class _MyAppState extends State<MyApp>{
                     icon: Icon(Icons.thumb_down),
                   ), // icon-1
                   IconButton(
+                    icon: Icon(Icons.thumb_up),
                     onPressed:(){
                       setState(() {
                         
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp>{
                       counter++;
                       print('$counter');
                     },
-                    icon: Icon(Icons.thumb_up),
+                    
                   ), // icon-1
                   Text('$counter', style: const TextStyle(fontWeight: FontWeight.bold),)
                 ],
@@ -65,7 +65,39 @@ class _MyAppState extends State<MyApp>{
                   IconButton(
                     onPressed:(){
                      final snackBar = SnackBar(
-                        content: Text('Yay! A SnackBar!'),
+                        content: Text('Enviar Correo'),
+                        action: SnackBarAction(
+                        label: 'Undo',
+                          onPressed: () {
+                            // Algo de código para ¡deshacer el cambio!
+                          },
+                        ),
+                      );
+                      // Encuentra el Scaffold en el árbol de widgets y ¡úsalo para mostrar un SnackBar!
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      setState(() {
+                        
+                      });
+                      if(f==1){
+                        iconColorM = Colors.blue;
+                        f--;
+                      }else{
+                        iconColorM = Colors.black;
+                        f++;
+                      }
+                      print('$counter');
+                    },
+                    icon: Icon(Icons.mail, color: iconColorM),
+                  ),
+                   Text("Correo"),
+                ],
+                ),
+                Column(
+                children: [
+                  IconButton(
+                    onPressed:(){
+                      final snackBar = SnackBar(
+                        content: Text('Hacer llamada'),
                         action: SnackBarAction(
                         label: 'Undo',
                           onPressed: () {
@@ -75,20 +107,20 @@ class _MyAppState extends State<MyApp>{
                       );
 
                       // Encuentra el Scaffold en el árbol de widgets y ¡úsalo para mostrar un SnackBar!
-                      Scaffold.of(context).showSnackBar(snackBar);
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      setState(() {
+                        
+                      });
+                      if(f==1){
+                        iconColorLl = Colors.blue;
+                        f--;
+                      }else{
+                        iconColorLl = Colors.black;
+                        f++;
+                      }
+                      print('$counter');
                     },
-                    icon: Icon(Icons.mail),
-                  ),
-                   Text("Correo"),
-                ],
-                ),
-                Column(
-                children: [
-                  IconButton(
-                    onPressed:(){
-                     
-                    },
-                    icon: Icon(Icons.phone),
+                    icon: Icon(Icons.phone, color: iconColorLl),
                   ),
                    Text("Llamada"),
                 ],
@@ -97,9 +129,31 @@ class _MyAppState extends State<MyApp>{
                 children: [
                   IconButton(
                     onPressed:(){
-                     
+                      final snackBar = SnackBar(
+                        content: Text('ir al ITESO'),
+                        action: SnackBarAction(
+                        label: 'Undo',
+                          onPressed: () {
+                            // Algo de código para ¡deshacer el cambio!
+                          },
+                        ),
+                      );
+
+                      // Encuentra el Scaffold en el árbol de widgets y ¡úsalo para mostrar un SnackBar!
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      setState(() {
+                        
+                      });
+                      if(f==1){
+                        iconColorR = Colors.blue;
+                        f--;
+                      }else{
+                        iconColorR = Colors.black;
+                        f++;
+                      }
+                      print('$counter');
                     },
-                    icon: Icon(Icons.directions),
+                    icon: Icon(Icons.directions, color: iconColorR),
                   ),
                    Text("Ruta"),
                 ],
