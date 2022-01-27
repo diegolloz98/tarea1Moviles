@@ -159,7 +159,16 @@ class _MyAppState extends State<MyApp>{
                 ],
                 ),
               ],
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.all(17.0),
+              child: Text(
+                "El ITESO, Universidad Jesuita de Guadalajara Instituto Tecnológico y de Estudios Superiores de Occidente, es una universidad privada ubicada en la Zona Metropolitana de Guadalajara, Jalisco, México, fundada en el año 1957 A mediados del decenio de los años 50, en Guadalajara no existía una universidad jesuita. En Guadalajara existe una institución de educación básica llamada Instituto de Ciencias, en la cual participan miembros de la Compañía de Jesús. (Esta fue la base de la actual institución) Padres de familia de los estudiantes del Instituto de Ciencias reunieron esfuerzos para que esta Casa de Estudios tomara forma. Entre otras implicaciones, algunos jesuitas que formaban parte de la que era la única universidad católica en Guadalajara, decidieron unirse a las filas del ITESO. Este contexto hizo polémica la fundación del ITESO, y sirvió para señalar la participación determinante de la Compañía de Jesús en el proyecto. Las primeras instalaciones del ITESO se ubicaron frente a la Rotonda de los Hombres Ilustres.",
+                textAlign: TextAlign.justify,
+              ),
+            ),
+
+
           ],
         )
     );
